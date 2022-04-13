@@ -1,0 +1,71 @@
+body{
+    background-color: yellow;
+}
+
+.corpo{
+  
+   
+
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.topo{
+    width: 375px;
+    height: 80px;
+
+    display: flex;
+    justify-content: space-between;
+
+    position: fixed;
+    top: 0px;
+    margin-top: 5px;
+}
+
+.meio{
+    width: 375px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+
+    margin-top: 66px;
+
+    background-color: red;
+}
+
+.escrevaaqui{
+    width: 375px;
+    height: 80;
+
+    display: flex;
+    justify-content: space-between;
+
+    position: fixed;
+    bottom: 0px;
+    margin-bottom: 26px;
+
+}
+
+.topo > img {
+    width: 75px;
+    height: 53px;
+}
+
+.topo > ion-icon{
+    font-size: 42.19px;
+    caret-color: black;   
+    
+}
+
+.escrevaaqui > ion-icon{
+    font-size: 26px;
+}
+
+input{
+    color: black;
+    
+}
