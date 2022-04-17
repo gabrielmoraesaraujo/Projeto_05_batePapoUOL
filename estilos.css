@@ -1,5 +1,5 @@
 body{
-    background-color: yellow;
+    background-color: #ffffff;
 }
 
 .corpo{
@@ -66,6 +66,8 @@ body{
 }
 
 input{
-    color: black;
-    
+    border: none;
+    width: 145px;
+    height: 30px;
+    font-size: 18px;
 }
