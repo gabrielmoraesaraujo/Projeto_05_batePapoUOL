@@ -28,8 +28,8 @@ function tratarErro(){
     confirmacaoStatus();      
  }
  function confirmacaoStatus(){
-    requisicao = axios.post('https://mock-api.driven.com.br/api/v6/uol/participants', nome); }
- const meuInterval = setInterval(confirmacaoStatus, 4500);
+    requisicao = axios.post('https://mock-api.driven.com.br/api/v6/uol/status', nome); }
+ const meuInterval = setInterval(confirmacaoStatus, 5000);
 
     
 
