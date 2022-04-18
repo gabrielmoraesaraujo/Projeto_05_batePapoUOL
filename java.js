@@ -6,6 +6,7 @@ let nomeusuario = "";
 let statusCode = 0;
 
 
+
 function inicio(){
         
     nomeusuario = prompt("Qual o seu nome ?") ;
@@ -97,6 +98,7 @@ function enviar(){
    let promise = axios.post('https://mock-api.driven.com.br/api/v6/uol/messages', objeto);
    promise.then(deubom);
    promise.catch(deuRuim);  
+   
  }   else window.location.reload();
 } 
 
