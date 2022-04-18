@@ -2,13 +2,14 @@ let requisicao = "";
 let nome = "";
 let teste =[];
 let variavellocal = [];
+let nomeusuario = "";
 
 
 
 function inicio(){
     //alert("inicio funcioanndo");
     
-    let nomeusuario = prompt("Qual o seu nome ?") ;
+    nomeusuario = prompt("Qual o seu nome ?") ;
         
     nome = {name: nomeusuario};    
     requisicao = axios.post('https://mock-api.driven.com.br/api/v6/uol/participants', nome);    
@@ -33,12 +34,16 @@ function tratarErro(){
 
  function confirmacaoStatus(){
     requisicao = axios.post('https://mock-api.driven.com.br/api/v6/uol/status', nome); 
-    //console.log(teste.length);
-    //console.log(variavellocal.length);
+
+    requisicao.catch(usuarioDeslogado)
+   
 }
  const meuInterval = setInterval(confirmacaoStatus, 5000);
  const carregaInterval = setInterval(tratarSucesso, 3000);
-    
+ 
+ function usuarioDeslogado(){
+    window.location.reload();
+ }
 
 function carregarpagina(mensagens){
     mensagens = mensagens.data;
@@ -51,7 +56,7 @@ function carregarpagina(mensagens){
 
         if(mensagens[i].type==="status"){
             chat.innerHTML += `
-        <li class="li.entrada">
+        <li class="entrada">
         <div class="caixamensagem">
         <span> (${mensagens[i].time}) ${mensagens[i].from} ${mensagens[i].text} </span> 
         </div>
@@ -71,7 +76,7 @@ function carregarpagina(mensagens){
         }
         if(mensagens[i].type==="private_message"){
             chat.innerHTML += `
-        <li class="li.reservada">
+        <li class="reservada">
         <div class="caixamensagem">
         <span> (${mensagens[i].time}) ${mensagens[i].from} reservadamente para ${mensagens[i].to}: ${mensagens[i].text} </span> 
         </div>
@@ -89,14 +94,31 @@ function carregarpagina(mensagens){
 
 function enviar(){
 
-}
-
-function saida(sair){
-
-
-}
-
-
-
-
+    let valorIput = document.querySelector("input").value;
+    console.log("Entrei e peguei o input");
     
+    const objeto = {
+        from: nomeusuario,
+        to: "Todos",
+        text: valorIput,
+        type: "message" // ou "private_message" para o bônus
+    };
+
+    console.log("Botei no objeto");
+    console.log(nomeusuario);
+    console.log(valorIput);
+
+   let promise = axios.post('https://mock-api.driven.com.br/api/v6/uol/messages', objeto);
+   promise.then(deubom);
+   promise.catch(deuRuim);  
+}   
+
+function deubom(){
+    console.log("Deu bom mano");
+}
+
+function deuRuim(){
+    console.log("Não foi dessa vez");
+}
+
+

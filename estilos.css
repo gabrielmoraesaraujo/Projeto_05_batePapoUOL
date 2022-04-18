@@ -35,10 +35,14 @@ ul {
     flex-direction: column;
     justify-content: center;
 
-    margin-top: 66px;
-    padding-bottom: 65px;
+    margin-top: 64px;
+    padding-bottom: 100px;
 }
 
+li{
+    word-break: break-all;
+    flex-wrap: wrap;
+}
  
 li.entrada{
     background-color: grey;
