@@ -6,7 +6,6 @@ let nomeusuario = "";
 let statusCode = 0;
 
 
-
 function inicio(){
         
     nomeusuario = prompt("Qual o seu nome ?") ;
@@ -53,7 +52,7 @@ function carregarpagina(mensagens){
             chat.innerHTML += `
         <li class="entrada">
         <div class="caixamensagem">
-        <span> (${mensagens[i].time})  ${mensagens[i].from} ${mensagens[i].text} </span> 
+        <span> <span class="cinza">(${mensagens[i].time})</span>  <span class="negrito">${mensagens[i].from}</span> ${mensagens[i].text} </span> 
         </div> 
         `
         chat.scrollIntoView(false);
@@ -63,7 +62,7 @@ function carregarpagina(mensagens){
             chat.innerHTML += `
         <li class="status">
         <div class="caixamensagem">
-        <span> (${mensagens[i].time}) <b>${mensagens[i].from}</b> para ${mensagens[i].to}: ${mensagens[i].text} </span> 
+        <span> <span class="cinza">(${mensagens[i].time})</span>  <span class="negrito">${mensagens[i].from}</span> para ${mensagens[i].to}: ${mensagens[i].text} </span> 
         </div>
         `
         chat.scrollIntoView(false);
@@ -73,7 +72,7 @@ function carregarpagina(mensagens){
             chat.innerHTML += `
         <li class="reservada">
         <div class="caixamensagem">
-        <span> (${mensagens[i].time}) <b>${mensagens[i].from}</b> reservadamente para ${mensagens[i].to}: ${mensagens[i].text} </span> 
+        <span> <span class="cinza">(${mensagens[i].time})</span>  <span class="negrito">${mensagens[i].from}</span> reservadamente para ${mensagens[i].to}: ${mensagens[i].text} </span> 
         </div>
         `
         chat.scrollIntoView(false);
