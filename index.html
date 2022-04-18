@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bate-papo UOL</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@100;200;300;400;500;600;700;800;900&family=Righteous&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="estilos.css">
     
@@ -20,12 +23,16 @@
         </div>
 
         <ul class="meio">
-            <li> essa li é apenas para testes okay</li>
 
+            <li class="entrada">
+        <div class="caixamensagem">
+        <span> (${mensagens[i].time})  ${mensagens[i].from} ${mensagens[i].text} </span> 
+        </div>
+          
         </ul>
 
         <div class="escrevaaqui">
-            <input type="text" class="envio" placeholder="Escreva aqui...." /> 
+            <input type="text" class="envio" style="font-style: italic;" placeholder= "Escreva aqui...." /> 
             <ion-icon onclick="enviar()" name="paper-plane-outline"></ion-icon>
         </div>
 
